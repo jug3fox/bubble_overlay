@@ -59,22 +59,6 @@ class BubbleOverlayService : Service() {
         textView?.setTextColor(Color.parseColor(color))
     }
 
-    fun updateIconTop(icon: ByteArray?) {
-        val iconTop = mBubbleView?.findViewById<ImageView>(R.id.bubble_image_top)
-        if (iconTop != null && icon != null)
-            Glide.with(this).load(icon).into(iconTop)
-        else
-            iconTop?.setImageResource(0)
-    }
-
-    fun updateIconBottom(icon: ByteArray?) {
-        val iconBottom = mBubbleView?.findViewById<ImageView>(R.id.bubble_image_bottom)
-        if (iconBottom != null && icon != null)
-            Glide.with(this).load(icon).into(iconBottom)
-        else
-            iconBottom?.setImageResource(0)
-    }
-
     fun updateBubbleColor(color: String) {
         val cardView = mBubbleView?.findViewById<CardView>(R.id.card)
         cardView?.setCardBackgroundColor((Color.parseColor(color)))
