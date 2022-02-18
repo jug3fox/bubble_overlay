@@ -42,6 +42,7 @@ class BubbleOverlay {
     String? bottomIconAsset,
     Timer? callback,
   }) async {
+    print("My version");
     var bytesTop = topIconAsset == null
         ? null
         : (await rootBundle.load(topIconAsset)).buffer.asUint8List();
