@@ -30,6 +30,9 @@ class BubbleOverlay {
   ///[topText], [middleText], [bottomText],
   ///[topTextColor], [middleTextColor], [bottomTextColor],
   ///[backgroundColor], [topIconAsset], [bottomIconAsset] and [callback]
+  void openNew() {
+    print("test");
+  }
   void openBubble({
     String topText = '',
     String middleText = '',
