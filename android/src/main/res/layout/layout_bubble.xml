@@ -66,18 +66,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        app:cardBackgroundColor="#FFAAAA"
-        app:cardCornerRadius="30dp">
+        app:cardElevation="5dp"
+        app:cardCornerRadius="3dp">
 
         <ImageView
             android:id="@+id/bubble_close"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginRight="3dp"
+            android:layout_margin="3dp"
             android:background="@drawable/circular_bordershape"
             android:src="@drawable/baseline_cancel_black_48dp"
-            android:tint="@android:color/darker_gray"
+            android:tint="#FFAAAA"
             tools:ignore="ContentDescription" />
     </androidx.cardview.widget.CardView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
