@@ -25,8 +25,8 @@
                 android:id="@+id/bubble_custom_text_top"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_gravity="fill_horizontal"
+                android:gravity="left"
                 android:text="123456789012345"
                 android:textAppearance="@android:style/TextAppearance"
                 tools:ignore="ContentDescription" />
