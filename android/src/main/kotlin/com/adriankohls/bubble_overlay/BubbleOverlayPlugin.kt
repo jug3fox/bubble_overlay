@@ -64,8 +64,6 @@ class BubbleOverlayPlugin : ActivityAware, FlutterPlugin, MethodChannel.MethodCa
                         val textColor: String? = arguments[4] as String?
                         val bottomColor: String? = arguments[5] as String?
                         val backgroundColor: String? = arguments[6] as String?
-                        val topIconAsset: ByteArray? = arguments[7] as ByteArray?
-                        val bottomIconAsset: ByteArray? = arguments[8] as ByteArray?
 
                         if (title != null)
                             mOverlayService?.updateTitle(title)
@@ -81,8 +79,6 @@ class BubbleOverlayPlugin : ActivityAware, FlutterPlugin, MethodChannel.MethodCa
                             mOverlayService?.updateBottomTextColor(bottomColor)
                         if (backgroundColor != null)
                             mOverlayService?.updateBubbleColor(backgroundColor)
-                        mOverlayService?.updateIconTop(topIconAsset)
-                        mOverlayService?.updateIconBottom(bottomIconAsset)
                     }
             }
 
@@ -220,16 +216,7 @@ class BubbleOverlayPlugin : ActivityAware, FlutterPlugin, MethodChannel.MethodCa
                 mOverlayService?.updateBubbleColor(bubbleColor)
             } else
                 throw Exception("BubbleService not running.")
-            "updateBubbleTopIcon" -> if (mBound) {
-                val icon = call.arguments as ByteArray
-                mOverlayService?.updateIconTop(icon)
-            } else
-                throw Exception("BubbleService not running.")
-            "updateBubbleBottomIcon" -> if (mBound) {
-                val icon = call.arguments as ByteArray
-                mOverlayService?.updateIconBottom(icon)
-            } else
-                throw Exception("BubbleService not running.")
+            
             else -> result.notImplemented()
         }
     }
