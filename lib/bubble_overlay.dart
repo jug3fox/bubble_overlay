@@ -41,17 +41,9 @@ class BubbleOverlay {
     String middleTextColor = '#000000',
     String bottomTextColor = '#000000',
     String backgroundColor = '#ffffff',
-    String? topIconAsset,
-    String? bottomIconAsset,
     Timer? callback,
   }) async {
     print("My version");
-    var bytesTop = topIconAsset == null
-        ? null
-        : (await rootBundle.load(topIconAsset)).buffer.asUint8List();
-    var bytesBottom = bottomIconAsset == null
-        ? null
-        : (await rootBundle.load(bottomIconAsset)).buffer.asUint8List();
     _platform.invokeMethod('openBubble', [
       topText,
       middleText,
@@ -60,8 +52,6 @@ class BubbleOverlay {
       middleTextColor,
       bottomTextColor,
       backgroundColor,
-      bytesTop,
-      bytesBottom,
     ]);
     setCallback(callback);
 
